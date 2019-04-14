@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>推箱子</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        .game{
+            width:400px;
+            margin:50px auto;
+        }
+        #canvas{
+            background-color: black;
+        }
+    </style>
+</head>
+<body onkeydown="doKeyDown(event)">
+<div class="game">
+<canvas id="canvas" width="400px" height="400px"></canvas>
+    <div id="msg"></div>
+    <input type="button" value="上一关" onclick="NextLevel(-1)">
+    <input id="levelnow">
+    <button id="relevel">选择难度</button>
+    <input type="button" value="下一关" onclick="NextLevel(1)">
+    <input type="button" value="重玩本关" onclick="NextLevel(0)">
+    <input type="button" value="游戏说明" onclick="showHelp()">
+</div>
+</body>
+<script src="js/setlevel.js"></script>
+<script src="js/map.js"></script>
+</html>
